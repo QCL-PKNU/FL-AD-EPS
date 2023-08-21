@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
 	true_and_prediction(testO, y_pred, f'{args.name}')
 
-	print("RMSE Loss: " + str(mean_squared_error(testO[:, 1], y_pred[:, 1], squared=False)))
+	# print("RMSE Loss: " + str(mean_squared_error(testO[:, 1], y_pred[:, 1], squared=False)))
 
 	# Scores
 	df = pd.DataFrame()

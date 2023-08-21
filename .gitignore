@@ -129,5 +129,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 training_rounds/
-plots/
 checkpoints/
+plots/
+plotter/
+!plotter/cm_score.ipynb
+!plotter/plotter.ipynb
