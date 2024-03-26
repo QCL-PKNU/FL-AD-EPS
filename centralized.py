@@ -23,13 +23,13 @@ if __name__ == '__main__':
 	## Prepare data
 	trainD, testD = next(iter(train_loader)), next(iter(test_loader))
 	trainO, testO = trainD, testD
-	if model.name in ['USAD']: 
+	if model.name in ['AE', 'DAGMM', 'USAD', 'MSCRED', 'CAE_M', 'GDN', 'MTAD_GAT', 'MAD_GAN']: 
 		trainD, testD = convert_to_windows(trainD, model), convert_to_windows(testD, model)
 
 	### Training phase
 	if not args.test:
 		print(f'{color.HEADER}Training {args.model} on {args.dataset}{color.ENDC}')
-		num_epochs = 10
+		num_epochs = 20
 		e = epoch + 1
 		start = time()
 
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 		end = time()
 		print(color.BOLD+'Training time: '+"{:10.4f}".format(end-start)+' s'+color.ENDC)
 		save_model(model, optimizer, scheduler, e, accuracy_list)
-		plot_accuracies(accuracy_list, f'{args.model}_{args.dataset}')
+		# plot_accuracies(accuracy_list, f'{args.model}_{args.dataset}')
 
 	### Testing phase
 	torch.zero_grad = True
@@ -49,10 +49,10 @@ if __name__ == '__main__':
 	loss, y_pred = backprop(0, model, testD, testO, optimizer, scheduler, training=False)
 
 	### Plot curves
-	if not args.test:
-		plotter(f'{args.model}_{args.dataset}', testO, y_pred, loss, labels)
+	# if not args.test:
+	# 	plotter(f'{args.model}_{args.dataset}', testO, y_pred, loss, labels)
 
-	true_and_prediction(testO, y_pred, f'{args.name}')
+	# true_and_prediction(testO, y_pred, f'{args.name}')
 
 	# print("RMSE Loss: " + str(mean_squared_error(testO[:, 1], y_pred[:, 1], squared=False)))
 

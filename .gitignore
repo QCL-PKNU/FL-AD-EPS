@@ -134,3 +134,5 @@ plots/
 plotter/
 !plotter/cm_score.ipynb
 !plotter/plotter.ipynb
+
+checkpoints/

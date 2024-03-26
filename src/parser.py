@@ -1,29 +1,22 @@
 import argparse
 
-parser = argparse.ArgumentParser(description='Time-Series Anomaly Detection')
-parser.add_argument('--dataset', 
-					metavar='-d', 
-					type=str, 
-					required=False,
-					default='EPS',
-                    help="dataset from ['EPS']")
-parser.add_argument('--model', 
-					metavar='-m', 
-					type=str, 
-					required=False,
-					default='USAD',
-                    help="model name")
-parser.add_argument('--test', 
-					action='store_true', 
-					help="test the model")
-parser.add_argument('--retrain', 
-					action='store_true', 
-					help="retrain the model")
-parser.add_argument('--use_fl', 
-					action='store_true', 
-					help="train using less data")
-parser.add_argument('--client', required=False, type=int, help="Client ID")
-parser.add_argument('--name', required=False, type=str, help="Name of the experiment")
+parser = argparse.ArgumentParser(description="Time-Series Anomaly Detection")
+parser.add_argument(
+    "--dataset",
+    metavar="-d",
+    type=str,
+    required=False,
+    default="EPS",
+    help="dataset from ['EPS']",
+)
+parser.add_argument(
+    "--model", metavar="-m", type=str, required=False, default="USAD", help="model name"
+)
+parser.add_argument("--test", action="store_true", help="test the model")
+parser.add_argument("--retrain", action="store_true", help="retrain the model")
+parser.add_argument("--use_fl", action="store_true", help="train using less data")
+parser.add_argument("--client", required=False, type=int, help="Client ID")
+parser.add_argument("--name", required=False, type=str, help="Name of the experiment")
 parser.add_argument(
     "--server_address",
     type=str,
@@ -32,11 +25,7 @@ parser.add_argument(
     help=f"gRPC server address",
 )
 parser.add_argument(
-    "--cid", 
-    default=1,
-    type=int, 
-    required=False, 
-    help="Client CID (no default)"
+    "--cid", default=1, type=int, required=False, help="Client CID (no default)"
 )
 parser.add_argument(
     "--log_host",
