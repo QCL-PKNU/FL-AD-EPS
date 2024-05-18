@@ -1,5 +1,9 @@
 # Federated Learning for Time-Series Data Anomaly Detection in EPS System
 
+This is the offical implementation of the paper: \
+**A Federated Learning Approach for Efficient Anomaly Detection in Electric Power Steering Systems (Published)**\
+Mr. Kimleang Kea, Professor. Youngsun Han, and Professor. Young-Jae Min
+
 ## Introduction
 
 In a traditional learning strategy to detect anomalies in time-series data, the data is collected from the same source and stored in a central server. However, in that case, we need to build up a powerful data center to analyze data from the whole Electrical Power Steering (EPS) system, which turns out to be inefficient. In this project, we propose a Federated Learning (FL) strategy to detect anomalies in time-series data. Because of its characteristics such as model-only exchange and parallel training, the strategy can not only preserve the privacy of data but also reduce the training time. The training simulation is conducted with a distribution of the dataset to different vehicles (FL clients). Each vehicle splits the dataset in a 7:3 ratio. 70% of the dataset is used for training and the rest 30% is used for testing.
@@ -117,7 +121,19 @@ sh run_fl_testing.sh
 
 ## Citation
 
-TODO: Add citation
+```
+@ARTICLE{kea2024federated,
+  author={Kea, Kimleang and Han, Youngsun and Min, Young-Jae},
+  journal={IEEE Access}, 
+  title={A Federated Learning Approach for Efficient Anomaly Detection in Electric Power Steering Systems}, 
+  year={2024},
+  volume={12},
+  number={},
+  pages={67525-67536},
+  keywords={Sensors;Anomaly detection;Data models;Sensor systems;Training;Time series analysis;Federated learning;Deep learning;Power steering;Anomaly detection;deep learning;electric power steering (EPS);federated learning},
+  doi={10.1109/ACCESS.2024.3397000}
+}
+```
 
 ## LICENSE
 
